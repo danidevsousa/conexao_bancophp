@@ -18,10 +18,10 @@ try{
        $email       = $_POST["email"];
        $fone        = $_POST["fone"];
        $mens        = $_POST["mens"];
-       $assunto     = "Site Playfit";
+       $assunto     = "";
   
        //ALIMENTAR OS ATRIBULTOS
-       require_once("adm/site.php");
+       require_once("adm/site.php");//CAMINHO DA PASTA AONDE ESTÁ A CONEXÃO
        $Contato = new Site();
        $Contato->nome = $nome;
        $Contato->email = $email;
@@ -50,15 +50,15 @@ try{
       $phpmail->SMTPSecure = 'tls'; // Autenticação SMTP
       $phpmail->SMTPAuth = true; // Caso o servidor SMTP precise de autenticação   
       
-      $phpmail->Username = "playfitcontato2021@gmail.com"; // SMTP username         
-      $phpmail->Password = "PlayFit@2021"; // SMTP password
+      $phpmail->Username = ""; // SMTP username         
+      $phpmail->Password = ""; // SMTP password
      
      
       $phpmail->IsHTML(true);         
       
       $phpmail->setFrom($email, $nome); // E-mail do remetende enviado pelo method post  
                
-      $phpmail->addAddress("danisousa2001@hotmail.com", $assunto);// E-mail do destinatario/*  
+      $phpmail->addAddress("", $assunto);// E-mail do destinatario/*  
       
       $phpmail->Subject = $assunto; // Assunto do remetende enviado pelo method post
               
