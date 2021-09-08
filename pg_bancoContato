@@ -1,0 +1,27 @@
+<?php
+    require_once("conexao.php");
+
+    class Site{
+
+        //ATRIBUTO (VARIAVÉIS)
+        public $nome;
+        public $email;
+        public $fone;
+        public $mens;
+        public $dataContato;
+        public $hora;
+    
+
+        public function InserirContato(){
+
+            //INSERT INTO contato (idContato, nome, email, fone, mens, dataContato, hora) VALUES ('', '', '', '', '', '');
+            $query = "INSERT INTO contato (nome, email, mens, dataContato, fone, hora) VALUES ('".$this->nome."', '".$this->email."', '".$this->mens."', '".$this->dataContato."', '".$this->fone."', '".$this->hora."')";
+           
+            $conexao = Conexao::LigarConexao();
+            $conexao->exec($query);
+        }
+
+
+    }
+
+?>
